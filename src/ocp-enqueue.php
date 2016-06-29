@@ -4,7 +4,7 @@
 =            ENQUEUE ASSETS            =
 ======================================*/
 
-//* Enqueue Owl Carousel v 2.0.0 Beta 2.4
+//* Enqueue Owl Carousel v 2.1.0
 //* https://owlcarousel2.github.io/OwlCarousel2/
 add_action( 'wp_enqueue_scripts', 'eq_owl_carousel', 12 );
 function eq_owl_carousel() {
