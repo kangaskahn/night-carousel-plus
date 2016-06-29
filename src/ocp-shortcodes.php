@@ -76,7 +76,7 @@ function ocp_customCarouselShortcode( $atts ) {
 function ocp_carouselScript($id, $options) {
 		$script = "";
 		if ($id) { 
-			$options = get_option( "taxonomy_$id" )['custom_options'];
+			$options = get_option( "taxonomy_$id" )['custom_options']['slider_settings'];
 			$script = 'jQuery(".owl-carousel-' . $id . '").owlCarousel({'. $options . '});';
 		} else {
 			$script = 'jQuery(".owl-carousel").owlCarousel();'; 
