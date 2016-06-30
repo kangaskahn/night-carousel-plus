@@ -10,8 +10,8 @@ function ocp_OwlCarouselSlideCarousel_add_new_meta_field() {
 	// this will add the custom meta field to the add new term page
 	?>
 	<div class="form-field">
-		<label for="term_meta[custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
-		<textarea type="text" name="term_meta[custom_options][slider_settings]" id="term_meta[custom_options][slider_settings]" rows="20" cols="40">
+		<label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
+		<textarea type="text" name="term_meta[ocp_custom_options][slider_settings]" id="term_meta[ocp_custom_options][slider_settings]" rows="20" cols="40">
 loop:true,
     margin:10,
     responsiveClass:true,
@@ -33,6 +33,16 @@ loop:true,
 		</textarea>
 		<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
 	</div>
+
+	<div class="form-field">
+		<label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
+		<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options][slider_template]" rows="20" cols="40">
+<div class="item">
+	{{title}}
+</div>
+		</textarea>
+		<p class="description"><?php _e( 'Owl Carousel Slide Template. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this link for help </a>.','owl-carousel-plus' ); ?></p>
+	</div>
 <?php
 }
 add_action( 'ocp-carousel_add_form_fields', 'ocp_OwlCarouselSlideCarousel_add_new_meta_field', 10, 2 );
@@ -46,28 +56,24 @@ function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
  
 	// retrieve the existing value(s) for this meta field. This returns an array
 	$term_meta = get_option( "taxonomy_$t_id" ); 
- 	print_r($term_meta['custom_options']);
+ 	print_r($term_meta['ocp_custom_options']);
  	?>
 	<tr class="form-field">
-	<th scope="row" valign="top"><label for="term_meta[custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
 		<td>
-			<textarea type="text" name="term_meta[custom_options][slider_settings]" id="term_meta[custom_options]" rows="20" cols="40">
-<?php echo esc_attr( $term_meta['custom_options']['slider_settings'] ) ? esc_attr( $term_meta['custom_options']['slider_settings'] ) : ''; ?>
+			<textarea type="text" name="term_meta[ocp_custom_options][slider_settings]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
+<?php echo esc_attr( $term_meta['ocp_custom_options']['slider_settings'] ) ? esc_attr( $term_meta['ocp_custom_options']['slider_settings'] ) : ''; ?>
 			</textarea>
 			<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
 		</td>
 	</tr>
-	<tr class="form-field">
-		<th scope="row" valign="top"><label for="term_meta[custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
+<tr class="form-field">
+	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
 		<td>
-			<label for="term_meta[custom_options][show_title]"><?php _e( 'Show Slide Title', 'owl-carousel-plus' ); ?></label>
-			<input type="checkbox" name="term_meta[custom_options][show_title]" id="term_meta[custom_options][show_title]" value="1" checked >
-			<br>
-			<label for="term_meta[custom_options][show_content]"><?php _e( 'Show Slide Content', 'owl-carousel-plus' ); ?></label>
-			<input type="checkbox" name="term_meta[custom_options][show_content]" id="term_meta[custom_options][show_content]" value="false">
-			<br>
-			<label for="term_meta[custom_options][show_image]"><?php _e( 'Show Slide Featured Image', 'owl-carousel-plus' ); ?></label>
-			<input type="checkbox" name="term_meta[custom_options][show_image]" id="term_meta[custom_options][show_image]" value="false">
+			<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
+<?php echo  $term_meta['ocp_custom_options']['slider_template']  ? $term_meta['ocp_custom_options']['slider_template']  : ''; ?>
+			</textarea>
+			<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
 		</td>
 	</tr>
 <?php
