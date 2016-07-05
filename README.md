@@ -1,4 +1,4 @@
-# Owl-Carousel-Plus v1.0.0
+# Owl-Carousel-Plus v1.1.0
 ### Owl Carousel WordPress Plugin
 #### By Matt Vona
 
@@ -6,14 +6,24 @@
 
 [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2) is a simple jQuery slider that lets you create a beautiful, responsive carousel slider. This WordPress plugin comes with functionality that will allow you to add a slide easily anywhere, each with custom settings.
 
+## Shortcode
 The shortcode currently has 1 argument that is necessary for it to function correctly:
+`carousel` Slug of carousel you want to appear.
 
-`[owl-slider-plus carousel="name-of-owl-slide-carousel-slug"]`
-
-For instance, if you had a carousel titled Home:
-
+Example:
 `[owl-slider-plus carousel="home"]`
 
+## Carousel Options
+Owl Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html)
+
+## Template
+Owl Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
+
+`{{title}}` The title of the slide.
+`{{content}}` The content of the slide.
+`{{excerpt}}` The excerpt of the slide.
+`{{featured-image}}` The featured image of the slide.
+`{{id}}` The Post ID of the slide.
 
 
 Initial release, I hope to add more features soon!

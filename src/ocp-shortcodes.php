@@ -89,5 +89,10 @@ function ocp_carouselScript($id, $options) {
 
 function ocp_filter($string) { 
 	$string = str_replace("{{title}}",get_the_title(),$string); 
+	$string = str_replace("{{content}}",get_the_content(),$string); 
+	$string = str_replace("{{excerpt}}",get_the_excerpt(),$string); 
+	$string = str_replace("{{id}}",get_the_id(),$string); 
+	//$string = str_replace("{{featured-image}}", ,$string); 
 	return $string;
+
 }
