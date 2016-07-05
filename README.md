@@ -22,8 +22,18 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 - `{{title}}` The title of the slide.
 - `{{content}}` The content of the slide.
 - `{{excerpt}}` The excerpt of the slide.
-- `{{featured-image}}` The featured image of the slide.
+- `{{featured-image}}` The featured image of the slide. *Is not Implemented Yet*
 - `{{id}}` The Post ID of the slide.
+
+
+## To-Do:
+- Implementing Featured-image to work in the template.
+
+## v1.1.0
+- Added more template options.
+
+### v1.0.0
+- Initial
 
 
 Initial release, I hope to add more features soon!
