@@ -87,14 +87,7 @@ function ocp_carouselScript($id, $options) {
 	<?php
 }
 
-function ocp_filter($string) {
-	preg_match_all('/{([^}]*)}/',$string,$matched);  
-	$text = "";
-	if(count($matched)>0){ 
-		foreach($matched[0] as $match){ 
-			$match2=str_replace("title",get_the_title(),$match); 
-			$text=str_replace($match,$match2,$text); 
-		} 
-	}  
-	return $text;
+function ocp_filter($string) { 
+	$string = str_replace("{{title}}",get_the_title(),$string); 
+	return $string;
 }

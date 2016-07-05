@@ -35,7 +35,7 @@ loop:true,
 	</div>
 
 	<div class="form-field">
-		<label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
+		<label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label>
 		<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options][slider_template]" rows="20" cols="40">
 <div class="item">
 	{{title}}
@@ -68,12 +68,12 @@ function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
 		</td>
 	</tr>
 <tr class="form-field">
-	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label></th>
 		<td>
 			<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
 <?php echo  $term_meta['ocp_custom_options']['slider_template']  ? $term_meta['ocp_custom_options']['slider_template']  : ''; ?>
 			</textarea>
-			<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
+			<p class="description"><?php _e( 'The template allows you to customize the html for each slide. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Visit the github to view more template variables and request your own! </a>.','owl-carousel-plus' ); ?></p>
 		</td>
 	</tr>
 <?php
