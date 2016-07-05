@@ -29,10 +29,10 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 ## To-Do:
 - Implementing Featured-image to work in the template.
 
-## v1.1.0
+#### v1.1.0
 - Added more template options.
 
-### v1.0.0
+v1.0.0
 - Initial
 
 
