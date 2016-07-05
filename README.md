@@ -8,13 +8,13 @@
 
 ## Shortcode
 The shortcode currently has 1 argument that is necessary for it to function correctly:
-`carousel` Slug of carousel you want to appear.
+- `carousel` Slug of carousel you want to appear.
 
 Example:
 `[owl-slider-plus carousel="home"]`
 
 ## Carousel Options
-Owl Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html)
+Owl Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html).
 
 ## Template
 Owl Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
