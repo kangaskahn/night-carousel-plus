@@ -19,11 +19,11 @@ Owl Carousel has many [options you can see here](https://owlcarousel2.github.io/
 ## Template
 Owl Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
 
-`{{title}}` The title of the slide.
-`{{content}}` The content of the slide.
-`{{excerpt}}` The excerpt of the slide.
-`{{featured-image}}` The featured image of the slide.
-`{{id}}` The Post ID of the slide.
+-`{{title}}` The title of the slide.
+-`{{content}}` The content of the slide.
+-`{{excerpt}}` The excerpt of the slide.
+-`{{featured-image}}` The featured image of the slide.
+-`{{id}}` The Post ID of the slide.
 
 
 Initial release, I hope to add more features soon!
