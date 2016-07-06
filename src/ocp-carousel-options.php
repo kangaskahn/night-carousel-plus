@@ -56,7 +56,6 @@ function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
  
 	// retrieve the existing value(s) for this meta field. This returns an array
 	$term_meta = get_option( "taxonomy_$t_id" ); 
- 	print_r($term_meta['ocp_custom_options']);
  	?>
 	<tr class="form-field">
 	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
