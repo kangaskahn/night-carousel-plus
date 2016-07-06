@@ -17,17 +17,17 @@ function ocp_customCarouselShortcode( $atts ) {
 		),
 		$atts
 	);
-
 	extract($atts);
 
+	//* Set Term if the carousel flag is set
 	if ($carousel) {
 		$termID = get_term_by('name', $carousel, 'ocp-carousel')->term_id;
 	}
 
-
-	add_action( 'wp_footer', 
-		function() use ( $carousel ) {
-			ocp_carouselScript($carousel); });
+	//* Hook the javascript for the slider
+	add_action( 'wp_footer', function() use ( $carousel ) {
+			ocp_carouselScript($carousel); 
+	});
 
 	// WP_Query arguments
 	$args = array (
@@ -73,6 +73,7 @@ function ocp_customCarouselShortcode( $atts ) {
 	return $output;
 }
 
+//* Generates javascript
 function ocp_carouselScript($id, $options) {
 		$script = "";
 		if ($id) { 
@@ -87,12 +88,20 @@ function ocp_carouselScript($id, $options) {
 	<?php
 }
 
+//* Filters through html and replaces variables with content
 function ocp_filter($string) { 
 	$string = str_replace("{{title}}",get_the_title(),$string); 
 	$string = str_replace("{{content}}",get_the_content(),$string); 
 	$string = str_replace("{{excerpt}}",get_the_excerpt(),$string); 
 	$string = str_replace("{{id}}",get_the_id(),$string); 
+	$string = str_replace("{{featured-image}}", ocp_get_the_post_thumbnail_url(), $string);
 	//$string = str_replace("{{featured-image}}", ,$string); 
 	return $string;
+}
 
+//* Returns the Post thumbnail URL
+function ocp_get_the_post_thumbnail_url($size = "") {
+	$thumb_id = get_post_thumbnail_id();
+	$thumb_url = wp_get_attachment_image_src($thumb_id, $size, true);
+	return $thumb_url[0];
 }

@@ -1,4 +1,4 @@
-# Owl-Carousel-Plus v1.1.0
+# Owl-Carousel-Plus v1.1.1
 ### Owl Carousel WordPress Plugin
 #### By Matt Vona
 
@@ -23,12 +23,16 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 - `{{content}}` The content of the slide.
 - `{{excerpt}}` The excerpt of the slide.
 - `{{id}}` The Post ID of the slide.
+- `{{featured-image}}` Returns the URL of the featured image.
 
 
 ## To-Do:
-- Implementing Featured-image to work in the template.
+- None at the moment, feel free to submit ideas!
 
-#### v1.1.0
+#### v1.1.1
+- Implemented Featured-image to work in the template.
+
+v1.1.0
 - Added more template options.
 
 v1.0.0
