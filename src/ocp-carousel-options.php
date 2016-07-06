@@ -13,23 +13,23 @@ function ocp_OwlCarouselSlideCarousel_add_new_meta_field() {
 		<label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
 		<textarea type="text" name="term_meta[ocp_custom_options][slider_settings]" id="term_meta[ocp_custom_options][slider_settings]" rows="20" cols="40">
 loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
+margin:10,
+responsiveClass:true,
+responsive:{
+    0:{
+        items:1,
+        nav:true
+    },
+    600:{
+        items:3,
+        nav:false
+    },
+    1000:{
+        items:5,
+        nav:true,
+        loop:false
     }
+}
 		</textarea>
 		<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
 	</div>
