@@ -27,7 +27,8 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 
 
 ## To-Do:
-- None at the moment, feel free to submit ideas!
+- Fix bug that adds slashes before quotes in carousel template
+- Feel free to submit ideas!
 
 #### v1.1.1
 - Implemented Featured-image to work in the template.
