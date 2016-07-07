@@ -1,4 +1,4 @@
-# Owl-Carousel-Plus v1.1.1
+# Owl-Carousel-Plus v1.1.2
 ### Owl Carousel WordPress Plugin
 #### By Matt Vona
 
@@ -30,7 +30,11 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 - Fix bug that adds slashes before quotes in carousel template
 - Feel free to submit ideas!
 
-#### v1.1.1
+#### v1.1.2
+- Fixed a bug that caused the content of the current page to be displayed instead of the post. 
+- Optimized performance by sending post object instead of doing db checks or wp default get functions.
+
+v1.1.1
 - Implemented Featured-image to work in the template.
 
 v1.1.0

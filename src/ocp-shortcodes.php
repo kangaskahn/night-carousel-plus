@@ -50,14 +50,14 @@ function ocp_customCarouselShortcode( $atts ) {
 		$i = 0; ?>
 		<div class="owl-carousel <?php if ($carousel) { echo 'owl-carousel-'.$carousel; } ?>">
 		<?php while ( $ocpSlideQuery->have_posts() ) {
-			$ocpSlideQuery->the_post(); 
-			$feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );	
-
-			print(ocp_filter(get_option( "taxonomy_$termID" )['ocp_custom_options']['slider_template'])); ?>
+			$ocpSlideQuery->the_post();
 			
-<?php	
+			//* Run the custom filter function
+			echo ocp_filter(get_option( "taxonomy_$termID" )['ocp_custom_options']['slider_template'], $ocpSlideQuery->post);
 			$i++;
-		} ?>
+		} 
+		wp_reset_postdata();
+?>
 		</div>
 <?php
 	} else {
@@ -66,9 +66,7 @@ function ocp_customCarouselShortcode( $atts ) {
 	}
 
 	// Restore original Post Data
-	wp_reset_postdata();
-
-	//wp_reset_query();
+	wp_reset_query();
 	$output = ob_get_clean();
 	return $output;
 }
@@ -89,19 +87,18 @@ function ocp_carouselScript($id, $options) {
 }
 
 //* Filters through html and replaces variables with content
-function ocp_filter($string) { 
-	$string = str_replace("{{title}}",get_the_title(),$string); 
-	$string = str_replace("{{content}}",get_the_content(),$string); 
-	$string = str_replace("{{excerpt}}",get_the_excerpt(),$string); 
-	$string = str_replace("{{id}}",get_the_id(),$string); 
-	$string = str_replace("{{featured-image}}", ocp_get_the_post_thumbnail_url(), $string);
-	//$string = str_replace("{{featured-image}}", ,$string); 
+function ocp_filter($string, $post) { 
+	$string = str_replace("{{title}}", $post->post_title,$string); 
+	$string = str_replace("{{content}}", $post->post_content,$string); 
+	$string = str_replace("{{excerpt}}", $post->post_excerpt,$string); 
+	$string = str_replace("{{id}}", $post->ID,$string); 
+	$string = str_replace("{{featured-image}}", ocp_get_the_post_thumbnail_url($post->ID), $string);
 	return $string;
 }
 
 //* Returns the Post thumbnail URL
-function ocp_get_the_post_thumbnail_url($size = "") {
+function ocp_get_the_post_thumbnail_url($id) {
 	$thumb_id = get_post_thumbnail_id();
-	$thumb_url = wp_get_attachment_image_src($thumb_id, $size, true);
+	$thumb_url = wp_get_attachment_image_src($thumb_id, '', true);
 	return $thumb_url[0];
 }
