@@ -33,6 +33,7 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 #### v1.1.2
 - Fixed a bug that caused the content of the current page to be displayed instead of the post. 
 - Optimized performance by sending post object instead of doing db checks or wp default get functions.
+- Fixed a small bug that add a slash in quotes which would ruin html classes 
 
 v1.1.1
 - Implemented Featured-image to work in the template.

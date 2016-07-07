@@ -70,7 +70,7 @@ function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
 	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label></th>
 		<td>
 			<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
-<?php echo  $term_meta['ocp_custom_options']['slider_template']  ? $term_meta['ocp_custom_options']['slider_template']  : ''; ?>
+<?php echo  stripslashes_deep($term_meta['ocp_custom_options']['slider_template'])  ? stripslashes_deep($term_meta['ocp_custom_options']['slider_template'])  : ''; ?>
 			</textarea>
 			<p class="description"><?php _e( 'The template allows you to customize the html for each slide. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Visit the github to view more template variables and request your own! </a>.','owl-carousel-plus' ); ?></p>
 		</td>
@@ -89,7 +89,7 @@ function ocp_OwlCarouselSlideCarousel_save( $term_id ) {
 		$cat_keys = array_keys( $_POST['term_meta'] );
 		foreach ( $cat_keys as $key ) {
 			if ( isset ( $_POST['term_meta'][$key] ) ) {
-				$term_meta[$key] = $_POST['term_meta'][$key];
+				$term_meta[$key] = stripslashes_deep($_POST['term_meta'][$key]);
 			}
 		}
 		// Save the option array.
