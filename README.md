@@ -25,6 +25,7 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 - `{{id}}` The Post ID of the slide.
 - `{{featured-image}}` Returns the URL of the featured image.
 
+![Owl Carousel Plus Screenshot](assets/img)
 
 ## To-Do:
 - Fix bug that adds slashes before quotes in carousel template
