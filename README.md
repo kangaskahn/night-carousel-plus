@@ -30,6 +30,7 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 
 ## To-Do:
 - Fix bug that adds slashes before quotes in carousel template
+- Adjust query ordering or allow for custom ordering of some kind
 - Feel free to submit ideas!
 
 #### v1.1.2
