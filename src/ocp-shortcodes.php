@@ -72,7 +72,7 @@ function ocp_customCarouselShortcode( $atts ) {
 }
 
 //* Generates javascript
-function ocp_carouselScript($id, $options) {
+function ocp_carouselScript($id) {
 		$script = "";
 		if ($id) { 
 			$options = get_option( "taxonomy_$id" )['ocp_custom_options']['slider_settings'];
