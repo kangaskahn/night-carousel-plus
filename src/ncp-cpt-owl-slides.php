@@ -4,7 +4,7 @@
 ===========================================================*/
 
 // Register Owl Carousel Slide Custom Post Type
-function ocp_customPostTypeSlides() {
+function ncp_customPostTypeSlides() {
 
 	$labels = array(
 		'name'                  => _x( 'Owl Slides', 'Post Type General Name', 'owl-carousel-plus' ),
@@ -38,7 +38,7 @@ function ocp_customPostTypeSlides() {
 		'description'           => __( 'Owl Carousel Slides', 'owl-carousel-plus' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
-		'taxonomies'            => array( 'ocp-carousel' ),
+		'taxonomies'            => array( 'ncp-carousel' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -53,13 +53,13 @@ function ocp_customPostTypeSlides() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'ocp-slides', $args );
+	register_post_type( 'ncp-slides', $args );
 
 }
-add_action( 'init', 'ocp_customPostTypeSlides', 0 );
+add_action( 'init', 'ncp_customPostTypeSlides', 0 );
 
 // Register Owl Carousel Slide Carousel Category Taxonomy
-function ocp_OwlSlidesCarousel() {
+function ncp_OwlSlidesCarousel() {
 
 	$labels = array(
 		'name'                       => _x( 'Owl Slide Carousel', 'Taxonomy General Name', 'owl-carousel-plus' ),
@@ -92,7 +92,7 @@ function ocp_OwlSlidesCarousel() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'ocp-carousel', array( 'ocp-slides' ), $args );
+	register_taxonomy( 'ncp-carousel', array( 'ncp-slides' ), $args );
 
 }
-add_action( 'init', 'ocp_OwlSlidesCarousel', 0 );
+add_action( 'init', 'ncp_OwlSlidesCarousel', 0 );

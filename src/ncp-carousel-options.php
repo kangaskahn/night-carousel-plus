@@ -6,12 +6,12 @@
 /*=========================================
 =            TERM PAGE OPTIONS            =
 =========================================*/
-function ocp_OwlCarouselSlideCarousel_add_new_meta_field() {
+function ncp_OwlCarouselSlideCarousel_add_new_meta_field() {
 	// this will add the custom meta field to the add new term page
 	?>
 	<div class="form-field">
-		<label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
-		<textarea type="text" name="term_meta[ocp_custom_options][slider_settings]" id="term_meta[ocp_custom_options][slider_settings]" rows="20" cols="40">
+		<label for="term_meta[ncp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label>
+		<textarea type="text" name="term_meta[ncp_custom_options][slider_settings]" id="term_meta[ncp_custom_options][slider_settings]" rows="20" cols="40">
 loop:true,
 margin:10,
 responsiveClass:true,
@@ -35,8 +35,8 @@ responsive:{
 	</div>
 
 	<div class="form-field">
-		<label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label>
-		<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options][slider_template]" rows="20" cols="40">
+		<label for="term_meta[ncp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label>
+		<textarea type="text" name="term_meta[ncp_custom_options][slider_template]" id="term_meta[ncp_custom_options][slider_template]" rows="20" cols="40">
 <div class="item">
 	{{title}}
 </div>
@@ -45,12 +45,12 @@ responsive:{
 	</div>
 <?php
 }
-add_action( 'ocp-carousel_add_form_fields', 'ocp_OwlCarouselSlideCarousel_add_new_meta_field', 10, 2 );
+//add_action( 'ncp-carousel_add_form_fields', 'ncp_OwlCarouselSlideCarousel_add_new_meta_field', 10, 2 );
 
 /*==============================================
 =            EDIT TERM PAGE OPTIONS            =
 ==============================================*/
-function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
+function ncp_OwlCarouselSlideCarousel_edit_meta_field($term) {
 	// put the term ID into a variable
 	$t_id = $term->term_id;
  
@@ -58,31 +58,31 @@ function ocp_OwlCarouselSlideCarousel_edit_meta_field($term) {
 	$term_meta = get_option( "taxonomy_$t_id" ); 
  	?>
 	<tr class="form-field">
-	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[ncp_custom_options][slider_settings]"><?php _e( 'Carousel Options', 'owl-carousel-plus' ); ?></label></th>
 		<td>
-			<textarea type="text" name="term_meta[ocp_custom_options][slider_settings]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
-<?php echo esc_attr( $term_meta['ocp_custom_options']['slider_settings'] ) ? esc_attr( $term_meta['ocp_custom_options']['slider_settings'] ) : ''; ?>
+			<textarea type="text" name="term_meta[ncp_custom_options][slider_settings]" id="term_meta[ncp_custom_options]" rows="20" cols="40">
+<?php echo esc_attr( $term_meta['ncp_custom_options']['slider_settings'] ) ? esc_attr( $term_meta['ncp_custom_options']['slider_settings'] ) : ''; ?>
 			</textarea>
 			<p class="description"><?php _e( 'Enter options or leave it blank. Default options have been provided. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Use this list to explore more carousel options</a>.','owl-carousel-plus' ); ?></p>
 		</td>
 	</tr>
 <tr class="form-field">
-	<th scope="row" valign="top"><label for="term_meta[ocp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[ncp_custom_options][slider_template]"><?php _e( 'Carousel Template', 'owl-carousel-plus' ); ?></label></th>
 		<td>
-			<textarea type="text" name="term_meta[ocp_custom_options][slider_template]" id="term_meta[ocp_custom_options]" rows="20" cols="40">
-<?php echo  stripslashes_deep($term_meta['ocp_custom_options']['slider_template'])  ? stripslashes_deep($term_meta['ocp_custom_options']['slider_template'])  : ''; ?>
+			<textarea type="text" name="term_meta[ncp_custom_options][slider_template]" id="term_meta[ncp_custom_options]" rows="20" cols="40">
+<?php echo  stripslashes_deep($term_meta['ncp_custom_options']['slider_template'])  ? stripslashes_deep($term_meta['ncp_custom_options']['slider_template'])  : ''; ?>
 			</textarea>
 			<p class="description"><?php _e( 'The template allows you to customize the html for each slide. <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">Visit the github to view more template variables and request your own! </a>.','owl-carousel-plus' ); ?></p>
 		</td>
 	</tr>
 <?php
 }
-add_action( 'ocp-carousel_edit_form_fields', 'ocp_OwlCarouselSlideCarousel_edit_meta_field', 10, 2 );
+add_action( 'ncp-carousel_edit_form_fields', 'ncp_OwlCarouselSlideCarousel_edit_meta_field', 10, 2 );
 
 /*====================================
 =            SAVE OPTIONS            =
 ====================================*/
-function ocp_OwlCarouselSlideCarousel_save( $term_id ) {
+function ncp_OwlCarouselSlideCarousel_save( $term_id ) {
 	if ( isset( $_POST['term_meta'] ) ) {
 		$t_id = $term_id;
 		$term_meta = get_option( "taxonomy_$t_id" );
@@ -96,5 +96,5 @@ function ocp_OwlCarouselSlideCarousel_save( $term_id ) {
 		update_option( "taxonomy_$t_id", $term_meta );
 	}
 }  
-add_action( 'edited_ocp-carousel', 'ocp_OwlCarouselSlideCarousel_save', 10, 2 );  
-add_action( 'create_ocp-carousel', 'ocp_OwlCarouselSlideCarousel_save', 10, 2 );
+add_action( 'edited_ncp-carousel', 'ncp_OwlCarouselSlideCarousel_save', 10, 2 );  
+add_action( 'create_ncp-carousel', 'ncp_OwlCarouselSlideCarousel_save', 10, 2 );

@@ -3,10 +3,10 @@
 =            Owl Carousel Shortcodes            =
 ===============================================*/
 
-add_shortcode( 'owl-carousel-plus', 'ocp_customCarouselShortcode' );
+add_shortcode( 'night-carousel-plus', 'ncp_customCarouselShortcode' );
 
 // Add Shortcode
-function ocp_customCarouselShortcode( $atts ) {
+function ncp_customCarouselShortcode( $atts ) {
 	ob_start();
 
 	// Attributes
@@ -20,22 +20,24 @@ function ocp_customCarouselShortcode( $atts ) {
 	extract($atts);
 
 	//* Set Term if the carousel flag is set
-	if ($carousel) {
-		$termID = get_term_by('name', $carousel, 'ocp-carousel')->term_id;
+	if ($carousel != '') {
+		if (isset($carousel->term_id)) {
+			$termID = get_term_by('name', $carousel, 'ncp-carousel')->term_id;
+		}
 	}
 
 	//* Hook the javascript for the slider
 	add_action( 'wp_footer', function() use ( $carousel ) {
-			ocp_carouselScript($carousel); 
+			ncp_carouselScript($carousel); 
 	});
 
 	// WP_Query arguments
 	$args = array (
-		'post_type'              => array( 'ocp-slides' ),
+		'post_type'              => array( 'ncp-slides' ),
 		'posts_per_page'         => $limit,
 		'tax_query' => array(
 				array(
-					'taxonomy' => 'ocp-carousel',
+					'taxonomy' => 'ncp-carousel',
 					'field'    => 'slug',
 					'terms'    => $carousel,
 				),
@@ -43,17 +45,17 @@ function ocp_customCarouselShortcode( $atts ) {
 	);
 
 	// The Query
-	$ocpSlideQuery = new WP_Query( $args );
+	$ncpSlideQuery = new WP_Query( $args );
 
 	// The Loop
-	if ( $ocpSlideQuery->have_posts() ) {
+	if ( $ncpSlideQuery->have_posts() ) {
 		$i = 0; ?>
 		<div class="owl-carousel <?php if ($carousel) { echo 'owl-carousel-'.$carousel; } ?>">
-		<?php while ( $ocpSlideQuery->have_posts() ) {
-			$ocpSlideQuery->the_post();
+		<?php while ( $ncpSlideQuery->have_posts() ) {
+			$ncpSlideQuery->the_post();
 			
 			//* Run the custom filter function
-			echo ocp_filter(get_option( "taxonomy_$termID" )['ocp_custom_options']['slider_template'], $ocpSlideQuery->post);
+			echo ncp_filter(get_option( "taxonomy_$termID" )['ncp_custom_options']['slider_template'], $ncpSlideQuery->post);
 			$i++;
 		} 
 		wp_reset_postdata();
@@ -72,10 +74,10 @@ function ocp_customCarouselShortcode( $atts ) {
 }
 
 //* Generates javascript
-function ocp_carouselScript($id) {
+function ncp_carouselScript($id) {
 		$script = "";
 		if ($id) { 
-			$options = get_option( "taxonomy_$id" )['ocp_custom_options']['slider_settings'];
+			$options = get_option( "taxonomy_$id" )['ncp_custom_options']['slider_settings'];
 			$script = 'jQuery(".owl-carousel-' . $id . '").owlCarousel({'. $options . '});';
 		} else {
 			$script = 'jQuery(".owl-carousel").owlCarousel();'; 
@@ -87,17 +89,17 @@ function ocp_carouselScript($id) {
 }
 
 //* Filters through html and replaces variables with content
-function ocp_filter($string, $post) { 
+function ncp_filter($string, $post) { 
 	$string = str_replace("{{title}}", $post->post_title,$string); 
 	$string = str_replace("{{content}}", $post->post_content,$string); 
 	$string = str_replace("{{excerpt}}", $post->post_excerpt,$string); 
 	$string = str_replace("{{id}}", $post->ID,$string); 
-	$string = str_replace("{{featured-image}}", ocp_get_the_post_thumbnail_url($post->ID), $string);
+	$string = str_replace("{{featured-image}}", ncp_get_the_post_thumbnail_url($post->ID), $string);
 	return $string;
 }
 
 //* Returns the Post thumbnail URL
-function ocp_get_the_post_thumbnail_url($id) {
+function ncp_get_the_post_thumbnail_url($id) {
 	$thumb_id = get_post_thumbnail_id();
 	$thumb_url = wp_get_attachment_image_src($thumb_id, '', true);
 	return $thumb_url[0];

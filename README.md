@@ -1,4 +1,4 @@
-# Owl-Carousel-Plus v1.1.2
+# Night-Carousel-Plus v1.1.2
 ### Owl Carousel WordPress Plugin
 #### By Matt Vona
 
@@ -14,10 +14,10 @@ Example:
 `[owl-carousel-plus carousel="home"]`
 
 ## Carousel Options
-Owl Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html).
+Night Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html).
 
 ## Template
-Owl Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
+Night Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
 
 - `{{title}}` The title of the slide.
 - `{{content}}` The content of the slide.
@@ -26,14 +26,18 @@ Owl Carousel Plus comes with a way to edit the output of each slide. The HTML ca
 - `{{featured-image}}` Returns the URL of the featured image.
 
 ## Screenshot:
-![Owl Carousel Plus Screenshot](assets/img/ocpscreen.png)
+![Night Carousel Plus Screenshot](assets/img/ocpscreen.png)
 
 ## To-Do:
 - Fix bug that adds slashes before quotes in carousel template
 - Adjust query ordering or allow for custom ordering of some kind
 - Feel free to submit ideas!
 
-#### v1.1.2
+#### v1.1.3
+- Changed name for WordPress Plugin manager
+- updated bug that showed notice if the carousel did not exist
+
+v1.1.2
 - Fixed a bug that caused the content of the current page to be displayed instead of the post. 
 - Optimized performance by sending post object instead of doing db checks or wp default get functions.
 - Fixed a small bug that add a slash in quotes which would ruin html classes 
