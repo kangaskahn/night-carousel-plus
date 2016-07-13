@@ -11,7 +11,7 @@ The shortcode currently has 1 argument that is necessary for it to function corr
 - `carousel` Slug of carousel you want to appear.
 
 Example:
-`[owl-carousel-plus carousel="home"]`
+`[night-carousel-plus carousel="home"]`
 
 ## Carousel Options
 Night Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html).
