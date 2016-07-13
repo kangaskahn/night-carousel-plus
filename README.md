@@ -1,5 +1,5 @@
 # Night-Carousel-Plus v1.1.3
-### Owl Carousel WordPress Plugin
+### A WordPress Plugin using the Owl Carousel jQuery Plugin
 #### By Matt Vona
 
 ---
