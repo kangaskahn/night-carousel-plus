@@ -1,4 +1,4 @@
-=== NIGHT OWL PLUS v. 1.1.3 ===
+=== Night Carousel Plus ===
 Contributors: matt vona
 Tags: carousel, owl, slider, jquery, javascript
 Requires at least: 4
@@ -20,25 +20,25 @@ Install the plugin, activate it, and create a new carousel in the Owl Slide Caro
 
 == Changelog ==
 
-== v1.1.3 ==
+== 1.1.3 ==
 
 * Changed name for WordPress Plugin manager
 * updated bug that showed notice if the carousel did not exist
 
-== v1.1.2 ==
+== 1.1.2 ==
 
 * Fixed a bug that caused the content of the current page to be displayed instead of the post.
 * Optimized performance by sending post object instead of doing db checks or wp default get functions.
 * Fixed a small bug that add a slash in quotes which would ruin html classes
 
-== v1.1.1 ==
+== 1.1.1 ==
 
 * Implemented Featured-image to work in the template.
 
-== v1.1.0 ==
+== 1.1.0 ==
 
 * Added more template options.
 
-== v1.0.0 ==
+== 1.0.0 ==
 
 * Initial
