@@ -24,6 +24,7 @@ Visit the (github repo)[https://github.com/kangaskahn/night-carousel-plus] to le
 * Sure! Just add an issue on here or github for a feature request, or submit a pull request!
 
 == Changelog ==
+
 == 1.1.3 ==
 
 * Changed name for WordPress Plugin manager
