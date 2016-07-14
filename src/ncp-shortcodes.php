@@ -12,7 +12,7 @@ function ncp_customCarouselShortcode( $atts ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'carousel' => '',
+			'carousel' => null,
 			'limit' => '-1',
 		),
 		$atts
@@ -20,11 +20,12 @@ function ncp_customCarouselShortcode( $atts ) {
 	extract($atts);
 
 	//* Set Term if the carousel flag is set
-	if ($carousel != '') {
-		if (isset($carousel->term_id)) {
-			$termID = get_term_by('name', $carousel, 'ncp-carousel')->term_id;
+	if ($carousel != null) {
+		$termID = get_term_by('name', $carousel, 'ncp-carousel');
+		if (!isset($termID->term_id)) {
+			return "The carousel does not exist.";
 		}
-	}
+	} 
 
 	//* Hook the javascript for the slider
 	add_action( 'wp_footer', function() use ( $carousel ) {
@@ -55,7 +56,7 @@ function ncp_customCarouselShortcode( $atts ) {
 			$ncpSlideQuery->the_post();
 			
 			//* Run the custom filter function
-			echo ncp_filter(get_option( "taxonomy_$termID" )['ncp_custom_options']['slider_template'], $ncpSlideQuery->post);
+			echo ncp_filter(get_option( "taxonomy_$termID->term_id" )['ncp_custom_options']['slider_template'], $ncpSlideQuery->post);
 			$i++;
 		} 
 		wp_reset_postdata();
@@ -64,7 +65,7 @@ function ncp_customCarouselShortcode( $atts ) {
 <?php
 	} else {
 		// no posts found
-		echo "No slides found in this carousel.";
+		echo "The carousel does not exist or no slides were found.";
 	}
 
 	// Restore original Post Data

@@ -45,7 +45,7 @@ responsive:{
 	</div>
 <?php
 }
-//add_action( 'ncp-carousel_add_form_fields', 'ncp_OwlCarouselSlideCarousel_add_new_meta_field', 10, 2 );
+add_action( 'ncp-carousel_add_form_fields', 'ncp_OwlCarouselSlideCarousel_add_new_meta_field', 10, 2 );
 
 /*==============================================
 =            EDIT TERM PAGE OPTIONS            =
