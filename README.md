@@ -1,4 +1,4 @@
-# Night-Carousel-Plus v1.1.3
+# Night-Carousel-Plus
 ### A WordPress Plugin using the Owl Carousel jQuery Plugin
 #### By Matt Vona
 
@@ -35,7 +35,10 @@ Night Carousel Plus comes with a way to edit the output of each slide. The HTML 
 - Adjust query ordering or allow for custom ordering of some kind
 - Feel free to submit ideas!
 
-#### v1.1.3
+#### v1.1.4 
+- Fixed bug that displayed PHP notice when carousel did not exist. 
+
+v1.1.3
 - Changed name for WordPress Plugin manager
 - updated bug that showed notice if the carousel did not exist
 
