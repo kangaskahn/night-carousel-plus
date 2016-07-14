@@ -16,6 +16,7 @@ Example:
 ## Carousel Options
 Night Carousel has many [options you can see here](https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html).
 
+
 ## Template
 Night Carousel Plus comes with a way to edit the output of each slide. The HTML can be customized exactly how you want it! The template field uses a system of variables to help with editing:
 
