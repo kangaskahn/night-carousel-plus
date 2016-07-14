@@ -1,25 +1,29 @@
 === Night Carousel Plus ===
-Contributors: matt vona
+Contributors: Matt Vona
 Tags: carousel, owl, slider, jquery, javascript
 Requires at least: 4
-Tested up to: 4.5.2
+Tested up to: 4.5.3
 Stable tag: 1.1.3
 License: GPLv2 or later
 
+Night Carousel Plus is an easy to use carousel plugin using Owl Carousel. Manage the output using an html template and predefined custom {{variables}}.
 
 == Description ==
-Owl Carousel is a simple jQuery slider that lets you create a beautiful, responsive carousel slider. This WordPress plugin comes with functionality that will allow you to add a slide easily anywhere, each with custom settings.
+Owl Carousel is a simple jQuery slider that lets you create a beautiful, responsive carousel slider. This WordPress plugin comes with functionality that will allow you to add a slider easily anywhere, each with custom settings, using a custom templating engine with predefined {{variables}}.
 
-Works with the Owl Carousel jQuery Plugin found here: https://github.com/OwlCarousel2/OwlCarousel2
-
-Github repo: https://github.com/kangaskahn/night-carousel-plus
+Visit the github repo to learn more: https://github.com/kangaskahn/night-carousel-plus
 
 == Installation ==
-
 Install the plugin, activate it, and create a new carousel in the Owl Slide Carousel in the Owl Slides admin menu.
 
-== Changelog ==
+Visit the (github repo)[https://github.com/kangaskahn/night-carousel-plus] to learn more.
 
+== Frequently Asked Questions ==
+== Can you add *insert feature here*?
+
+* Sure! Just add an issue on here or github for a feature request, or submit a pull request!
+
+== Changelog ==
 == 1.1.3 ==
 
 * Changed name for WordPress Plugin manager
