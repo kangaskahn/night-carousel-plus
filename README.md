@@ -31,12 +31,13 @@ Night Carousel Plus comes with a way to edit the output of each slide. The HTML 
 ![Night Carousel Plus Screenshot](assets/img/ocpscreen.png)
 
 ## To-Do:
-- Fix bug that adds slashes before quotes in carousel template
+
 - Adjust query ordering or allow for custom ordering of some kind
 - Feel free to submit ideas!
 
 #### v1.1.4 
 - Fixed bug that displayed PHP notice when carousel did not exist. 
+- Fixed bug that adds slashes before quotes in carousel template
 
 v1.1.3
 - Changed name for WordPress Plugin manager
