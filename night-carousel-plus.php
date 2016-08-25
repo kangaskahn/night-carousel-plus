@@ -3,7 +3,7 @@
 * Plugin Name: Night Carousel Plus
 * Plugin URI: http://labs.mattvona.com
 * Description: Easy Manager for the Owl Carousel Jquery Plugin
-* Version: 1.1.4
+* Version: 1.1.5
 * Author: Matt Vona
 * Author URI: http://labs.mattvona.com
 * License: GPLv2

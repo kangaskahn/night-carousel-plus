@@ -2,8 +2,8 @@
 Contributors: Matt Vona
 Tags: carousel, owl, slider, jquery, javascript
 Requires at least: 4
-Tested up to: 4.5.3
-Stable tag: 1.1.4
+Tested up to: 4.6.0
+Stable tag: 1.1.5
 License: GPLv2 or later
 
 Night Carousel Plus is an easy to use carousel plugin using Owl Carousel. Manage the output using an html template and predefined custom {{variables}}.
@@ -26,6 +26,9 @@ Visit the (github repo)[https://github.com/kangaskahn/night-carousel-plus] to le
 * Sure! Just add an issue on here or github for a feature request, or submit a pull request!
 
 == Changelog ==
+
+== 1.1.5 ==
+* Tested with WordPRess 4.6
 
 == 1.1.4 ==
 * Updated carousel not existing bug in shortcode

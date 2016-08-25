@@ -35,7 +35,10 @@ Night Carousel Plus comes with a way to edit the output of each slide. The HTML 
 - Adjust query ordering or allow for custom ordering of some kind
 - Feel free to submit ideas!
 
-#### v1.1.4 
+#### v1.1.5
+- Tested with WordPress 4.6 
+
+v1.1.4 
 - Fixed bug that displayed PHP notice when carousel did not exist. 
 - Fixed bug that adds slashes before quotes in carousel template
 
